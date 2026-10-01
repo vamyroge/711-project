@@ -1,0 +1,831 @@
+Hãy tiếp tục phát triển PROJECT HIỆN TẠI. Không được tự ý tạo project mới hoặc rewrite toàn bộ code nếu không cần thiết.
+
+Mục tiêu lần này là biến project hiện tại thành một sản phẩm AI Debate hoàn chỉnh, có UI/UX premium, debate engine linh hoạt, cấu hình rõ ràng, tích hợp xKiro đúng cách và sẵn sàng deploy Vercel.
+
+==================================================
+
+1. TRƯỚC KHI SỬA CODE
+   ==================================================
+
+Hãy inspect toàn bộ project hiện tại trước.
+
+Kiểm tra:
+
+* package.json
+* cấu trúc thư mục
+* frontend
+* backend/API routes
+* debate engine
+* xKiro integration
+* model configuration
+* streaming
+* state management
+* environment variables
+* error handling
+* responsive UI
+
+Xác định:
+
+1. Những phần đã hoạt động tốt → giữ lại.
+2. Những phần thiếu → bổ sung.
+3. Những phần lỗi → sửa.
+4. Những phần architecture chưa tốt → refactor có kiểm soát.
+
+KHÔNG rewrite những phần đang hoạt động tốt chỉ để thay đổi cấu trúc.
+
+==================================================
+2. UI/UX — NÂNG CẤP MẠNH
+========================
+
+Làm UI giống một sản phẩm SaaS AI thực tế, không giống demo.
+
+Phong cách:
+
+* Dark mode
+* Premium
+* Modern
+* Minimal
+* Compact
+* Glass / subtle borders
+* Typography rõ
+* Animation nhẹ
+* Responsive
+* Desktop optimized
+* Mobile usable
+
+Không lạm dụng gradient.
+
+Không làm UI quá nhiều màu.
+
+Không dùng quá nhiều card lớn khiến màn hình bị chật.
+
+Ưu tiên information density cao nhưng vẫn dễ đọc.
+
+==================================================
+3. MAIN LAYOUT
+==============
+
+Thiết kế layout:
+
+SIDEBAR
++
+MAIN WORKSPACE
+
+Sidebar:
+
+AI Debate Arena
+
+New Debate
+
+History
+
+Models
+
+Settings
+
+Main:
+
+Header
+Topic input
+Debate configuration
+Live debate
+Final result
+
+Nếu project hiện tại có layout tốt hơn thì giữ concept đó nhưng cải thiện UX.
+
+==================================================
+4. TOPIC INPUT
+==============
+
+Tạo khu vực nhập topic thật đẹp.
+
+Ví dụ:
+
+"What should we debate?"
+
+Textarea lớn.
+
+Có:
+
+Character count
+
+Clear
+
+Example topics
+
+Start Debate
+
+Nút Start Debate phải nổi bật.
+
+Có thể disable khi:
+
+* topic rỗng
+* đang debate
+* API chưa configured
+
+==================================================
+5. DEBATE CONFIGURATION
+=======================
+
+Đây là phần QUAN TRỌNG.
+
+Người dùng phải có thể cấu hình debate trước khi chạy.
+
+Tạo một panel:
+
+DEBATE SETTINGS
+
+Rounds
+
+[ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ]
+
+hoặc slider:
+
+Rounds: 5
+
+Min: 1
+Max: 10
+
+Cho phép người dùng tự chọn số round.
+
+Không hard-code 5 rounds.
+
+==================================================
+6. CHO PHÉP CẤU HÌNH AI
+=======================
+
+Hiển thị rõ 5 AI.
+
+Ví dụ:
+
+AI 01
+Lead Analyst
+MiniMax M3
+
+AI 02
+Critical Analyst
+Qwen 3.8 Max
+
+AI 03
+Devil's Advocate
+Mistral Large 3
+
+AI 04
+Alternative Thinker
+Qwen 3.7 Max
+
+AI 05
+Synthesizer
+MiniMax M2.7
+
+Mỗi AI phải có:
+
+Avatar/icon
+Tên
+Role
+Model
+Status
+
+Không chỉ hiển thị tên model.
+
+==================================================
+7. MODEL SELECTOR
+=================
+
+Cho phép thay đổi model cho từng AI nếu architecture hiện tại hỗ trợ.
+
+Tạo model selector.
+
+Ví dụ:
+
+AI 01
+Role:
+Lead Analyst
+
+Model:
+[ MiniMax M3 ▼ ]
+
+AI 02
+Role:
+Critical Analyst
+
+Model:
+[ Qwen 3.8 Max ▼ ]
+
+...
+
+Các model mặc định:
+
+minimax/minimax-m3:free
+qwen/qwen3.8-max:free
+mistralai/mistral-large-2512
+qwen/qwen3.7-max:free
+minimax/minimax-m2.7:free
+
+Lưu model configuration ở một config duy nhất.
+
+Không hard-code model ID ở nhiều file.
+
+==================================================
+8. ROLE CONFIGURATION
+=====================
+
+Cho phép hiển thị rõ vai trò.
+
+Ví dụ:
+
+🧠 Lead Analyst
+🔍 Critical Analyst
+⚔ Devil's Advocate
+💡 Alternative Thinker
+🎯 Synthesizer
+
+Không cần cho user sửa system prompt mặc định trong phiên bản đầu.
+
+Nhưng architecture phải cho phép thay đổi role/prompt sau này.
+
+==================================================
+9. ADVANCED SETTINGS
+====================
+
+Tạo Advanced Settings dạng collapsible.
+
+Bao gồm:
+
+Rounds
+Temperature
+Max output tokens
+Parallel execution
+Streaming
+
+Ví dụ:
+
+Advanced Settings
+
+Temperature
+[ 0.7 ]
+
+Max output
+[ 3000 ]
+
+Parallel AI
+[ ON ]
+
+Streaming
+[ ON ]
+
+Không làm Advanced Settings chiếm diện tích lớn.
+
+==================================================
+10. LIVE DEBATE
+===============
+
+Khi bắt đầu:
+
+Hiển thị:
+
+ROUND 1 / 5
+
+Progress bar.
+
+Các AI cards nhỏ gọn.
+
+Ví dụ:
+
+┌─────────────────────────┐
+│ 🧠 AI 01                │
+│ MiniMax M3              │
+│ Lead Analyst             │
+│ ● Streaming             │
+│                         │
+│ Nội dung...             │
+└─────────────────────────┘
+
+5 cards có thể nằm trong grid.
+
+Desktop:
+
+2 + 2 + 1
+
+hoặc layout tối ưu tùy màn hình.
+
+Không để một AI card chiếm toàn bộ màn hình trong lúc debate.
+
+==================================================
+11. ROUND NAVIGATION
+====================
+
+Tạo timeline:
+
+● Round 1
+● Round 2
+● Round 3
+● Round 4
+● Round 5
+
+Round hiện tại được highlight.
+
+Round đã hoàn thành có trạng thái Completed.
+
+Round đang chạy:
+
+Streaming
+
+Round chưa chạy:
+
+Pending
+
+Cho phép click các round đã hoàn thành để xem lại.
+
+Không cho click round chưa chạy.
+
+==================================================
+12. COMPACT → EXPANDED RESULT
+=============================
+
+Trong lúc live:
+
+AI response compact.
+
+Khi user click vào AI:
+
+Card mở rộng.
+
+Có thể xem full response.
+
+Khi debate hoàn thành:
+
+FINAL RESULT tự động trở thành khu vực lớn nhất.
+
+==================================================
+13. FINAL RESULT UI
+===================
+
+Thiết kế Final Result thật đẹp.
+
+Header:
+
+DEBATE RESULT
+
+Status:
+Completed
+
+Rounds:
+5
+
+AI:
+5
+
+Sau đó:
+
+Executive Summary
+
+Key Arguments
+
+Strongest Counterarguments
+
+Agreement
+
+Disagreement
+
+Important Assumptions
+
+Remaining Uncertainty
+
+Final Synthesis
+
+Có tab:
+
+Overview
+Arguments
+Debate
+AI Responses
+
+==================================================
+14. FINAL SYNTHESIS
+===================
+
+Đây phải là phần nổi bật nhất.
+
+Dùng typography lớn hơn.
+
+Có thể highlight:
+
+Key Insight
+
+Main Tension
+
+Consensus
+
+Uncertainty
+
+Final Synthesis
+
+Không tạo "winner" nếu debate không có cơ chế xác định winner.
+
+Không biến kết quả thành ranking AI.
+
+==================================================
+15. DEBATE CONTROLS
+===================
+
+Trong khi đang chạy:
+
+[ Pause ]
+[ Stop ]
+
+Nếu Pause:
+
+tạm dừng xử lý nếu architecture cho phép.
+
+Nếu Stop:
+
+dừng debate an toàn.
+
+Không crash.
+
+Sau khi Stop:
+
+hiển thị:
+
+Debate stopped
+Completed rounds: X/Y
+
+Có:
+
+Resume
+New Debate
+
+Nếu Resume khó triển khai với architecture hiện tại thì ít nhất phải có Stop an toàn.
+
+==================================================
+16. STREAMING UX
+================
+
+Streaming phải mượt.
+
+Hiển thị:
+
+● AI 01 Streaming
+● AI 02 Completed
+● AI 03 Thinking
+● AI 04 Waiting
+● AI 05 Waiting
+
+Không hiển thị chain-of-thought nội bộ.
+
+Chỉ hiển thị output được model trả về.
+
+Có animation cursor nhẹ khi đang stream.
+
+==================================================
+17. XKIRO CONFIGURATION
+=======================
+
+Sử dụng xKiro OpenAI-compatible API.
+
+Base URL:
+
+https://api.xkiro.com/v1
+
+Environment variable:
+
+XKIRO_API_KEY
+
+Tạo hoặc kiểm tra:
+
+.env.local
+
+Nội dung:
+
+XKIRO_API_KEY=YOUR_XKIRO_API_KEY
+
+Tạo:
+
+.env.example
+
+với:
+
+XKIRO_API_KEY=
+
+QUAN TRỌNG:
+
+API key chỉ được dùng server-side.
+
+Frontend KHÔNG được truy cập:
+
+process.env.XKIRO_API_KEY
+
+Không đưa API key vào:
+
+localStorage
+sessionStorage
+client state
+URL
+query params
+frontend bundle
+logs
+
+Frontend chỉ gọi API nội bộ.
+
+==================================================
+18. XKIRO API CLIENT
+====================
+
+Tạo một abstraction riêng:
+
+lib/xkiro/client.ts
+
+hoặc architecture tương đương.
+
+Client phải:
+
+* đọc XKIRO_API_KEY
+* sử dụng baseURL https://api.xkiro.com/v1
+* gọi OpenAI-compatible endpoint
+* hỗ trợ streaming nếu API hỗ trợ
+* xử lý errors
+* timeout
+* model unavailable
+* rate limit
+
+Không duplicate API logic ở nhiều component.
+
+==================================================
+19. XKIRO CONNECTION TEST
+=========================
+
+Trong Settings tạo:
+
+XKIRO CONNECTION
+
+Status:
+
+● Connected
+hoặc
+● Not configured
+
+Button:
+
+[ Test Connection ]
+
+Khi click:
+
+Frontend gọi backend endpoint.
+
+Backend kiểm tra XKIRO_API_KEY.
+
+Không trả API key về frontend.
+
+Nếu thành công:
+
+✓ xKiro API connected
+
+Nếu thất bại:
+
+✕ Unable to connect
+
+Hiển thị lỗi thân thiện.
+
+Không hiển thị secret.
+
+==================================================
+20. VERCEL DEPLOYMENT
+=====================
+
+Làm project tương thích Vercel.
+
+Kiểm tra:
+
+npm run build
+
+Nếu build lỗi:
+
+TỰ SỬA.
+
+Không dừng ở việc báo lỗi.
+
+Sau đó hướng dẫn rõ cách deploy.
+
+README phải có:
+
+LOCAL SETUP
+
+1. Clone project
+2. npm install
+3. tạo .env.local
+4. thêm:
+
+XKIRO_API_KEY=your_key
+
+5. npm run dev
+
+VERCEL SETUP
+
+1. Push project lên GitHub.
+2. Import repository vào Vercel.
+3. Vào:
+
+Project Settings
+→ Environment Variables
+
+4. Tạo:
+
+Name:
+XKIRO_API_KEY
+
+Value:
+API key xKiro của user
+
+5. Chọn:
+   Production
+   Preview
+   Development
+
+nếu phù hợp.
+
+6. Save.
+7. Redeploy.
+
+Sau deploy:
+
+mở website
+→ Settings
+→ Test Connection
+
+==================================================
+21. VERCEL COMPATIBILITY
+========================
+
+Kiểm tra đặc biệt:
+
+* API routes
+* streaming
+* server runtime
+* timeout
+* environment variables
+* dynamic functions
+* client/server component boundaries
+
+Không sử dụng Node-only API nếu không tương thích runtime đang chọn.
+
+Nếu cần:
+
+export const runtime = "nodejs";
+
+chỉ sử dụng khi thực sự cần thiết.
+
+==================================================
+22. ERROR HANDLING
+==================
+
+Một AI lỗi không được làm toàn bộ debate crash.
+
+Ví dụ:
+
+AI 03
+⚠ Model unavailable
+
+Các AI khác tiếp tục.
+
+Cuối cùng Final Result phải biết:
+
+AI 03 failed in Round 2
+
+Không giả tạo response cho AI lỗi.
+
+==================================================
+23. RESPONSIVE
+==============
+
+Desktop:
+
+sidebar + workspace.
+
+Tablet:
+
+sidebar thu gọn.
+
+Mobile:
+
+sidebar → drawer.
+
+AI cards:
+
+Desktop → grid
+
+Mobile → single column
+
+Final Result:
+
+mobile optimized.
+
+Không để horizontal overflow.
+
+==================================================
+24. MICRO INTERACTIONS
+======================
+
+Thêm animation nhẹ:
+
+* button hover
+* card hover
+* status transition
+* streaming cursor
+* progress
+* round transition
+* expand/collapse
+
+Không animation quá mức.
+
+==================================================
+25. ACCESSIBILITY
+=================
+
+Có:
+
+* keyboard navigation
+* focus states
+* aria-label cho icon buttons
+* contrast tốt
+* button disabled states
+* readable font sizes
+
+==================================================
+26. CODE QUALITY
+================
+
+Sau khi sửa:
+
+* không duplicate logic
+* component hóa hợp lý
+* TypeScript strict
+* không any nếu không cần
+* không console.log secret
+* không dead code
+* không fake data trong production flow
+
+==================================================
+27. TEST
+========
+
+Sau khi hoàn thành:
+
+Chạy:
+
+npm install
+
+npm run build
+
+Nếu có:
+
+npm run lint
+
+Sửa toàn bộ lỗi có thể tự sửa.
+
+Test:
+
+1. UI load
+2. API route
+3. xKiro connection
+4. start debate
+5. streaming
+6. round progression
+7. multiple rounds
+8. AI error handling
+9. final synthesis
+10. stop debate
+11. responsive layout
+
+==================================================
+28. QUAN TRỌNG — KHÔNG CHỈ TRẢ LỜI
+==================================
+
+HÃY TRỰC TIẾP SỬA PROJECT HIỆN TẠI.
+
+Không chỉ đưa code mẫu.
+
+Không chỉ giải thích.
+
+Không hỏi tôi những thứ có thể tự kiểm tra.
+
+Nếu có vấn đề trong code hiện tại:
+
+→ inspect
+→ xác định nguyên nhân
+→ sửa
+→ test
+→ sửa tiếp nếu phát sinh lỗi.
+
+Sau khi hoàn thành hãy báo cáo ngắn:
+
+* UI đã nâng cấp gì
+* Debate settings đã thêm gì
+* xKiro integration đang hoạt động thế nào
+* files quan trọng đã sửa
+* build status
+* cách chạy local
+* cách thêm XKIRO_API_KEY
+* cách deploy Vercel
+
+Nếu có phần nào không thể test vì thiếu API key thật, hãy nói chính xác phần đó thay vì giả vờ đã test thành công.

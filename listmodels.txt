@@ -1,0 +1,253 @@
+
+MiniMax
+8 models
+MiniMax M3 (Free)
+
+minimax/minimax-m3:free
+
++1
+1Mctx
+Miễn phí
+MiniMax M2.7 (Free)
+
+minimax/minimax-m2.7:free
+
+204Kctx
+Miễn phí
+MiniMax M2.7 Highspeed (Free)
+
+minimax/minimax-m2.7-highspeed:free
+
+204Kctx
+Miễn phí
+MiniMax M2.5 (Free)
+
+minimax/minimax-m2.5:free
+
+204Kctx
+Miễn phí
+MiniMax M2.5 Highspeed (Free)
+
+minimax/minimax-m2.5-highspeed:free
+
+204Kctx
+Miễn phí
+MiniMax M2.1 (Free)
+
+minimax/minimax-m2.1:free
+
+204Kctx
+Miễn phí
+MiniMax M2.1 Highspeed (Free)
+
+minimax/minimax-m2.1-highspeed:free
+
+204Kctx
+Miễn phí
+MiniMax M2 (Free)
+
+minimax/minimax-m2:free
+
+204Kctx
+Miễn phí
+
+Qwen
+19 models
+Qwen3.8 Omni Flash (Free)
+
+qwen/qwen3.8-omni-flash:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.8 Max (Free)
+
+qwen/qwen3.8-max:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.7 Max (Free)
+
+qwen/qwen3.7-max:free
+
+1Mctx
+Miễn phí
+Qwen3.7 Plus (Free)
+
+qwen/qwen3.7-plus:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.7 Flash (Free)
+
+qwen/qwen3.7-flash:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.6 Plus (Free)
+
+qwen/qwen3.6-plus:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.6 Max Preview (Free)
+
+qwen/qwen3.6-max-preview:free
+
+262Kctx
+Miễn phí
+Qwen3.6 27B (Free)
+
+qwen/qwen3.6-27b:free
+
++1
+262Kctx
+Miễn phí
+Qwen3.5 Plus (Free)
+
+qwen/qwen3.5-plus:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.5 Omni Plus (Free)
+
+qwen/qwen3.5-omni-plus:free
+
+262Kctx
+Miễn phí
+Qwen3.6 35B A3B (Free)
+
+qwen/qwen3.6-35b-a3b:free
+
++1
+262Kctx
+Miễn phí
+Qwen3.5 Flash (Free)
+
+qwen/qwen3.5-flash:free
+
++1
+1Mctx
+Miễn phí
+Qwen3.5 397B A17B (Free)
+
+qwen/qwen3.5-397b-a17b:free
+
++1
+262Kctx
+Miễn phí
+Qwen3.5 Omni Flash (Free)
+
+qwen/qwen3.5-omni-flash:free
+
+262Kctx
+Miễn phí
+Qwen3 Max (Free)
+
+qwen/qwen3-max:free
+
++1
+262Kctx
+Miễn phí
+Qwen Plus 0728 (Free)
+
+qwen/qwen-plus-2025-07-28:free
+
++1
+131Kctx
+Miễn phí
+Qwen3 Coder Plus (Free)
+
+qwen/qwen3-coder-plus:free
+
++1
+1Mctx
+Miễn phí
+Qwen3 VL Plus (Free)
+
+qwen/qwen3-vl-plus:free
+
++1
+262Kctx
+Miễn phí
+Qwen3 Omni Flash (Free)
+
+qwen/qwen3-omni-flash:free
+
+262Kctx
+Miễn phí
+
+Mistral
+8 models
+Mistral Large 3
+
+mistralai/mistral-large-2512
+
+256Kctx
+Miễn phí
+Mistral Medium 3.5
+
+mistralai/mistral-medium-3.5
+
++1
+256Kctx
+Miễn phí
+Mistral Small 4
+
+mistralai/mistral-small-2603
+
++1
+256Kctx
+Miễn phí
+Codestral
+
+mistralai/codestral-2508
+
+256Kctx
+Miễn phí
+Devstral 2
+
+mistralai/devstral-medium
+
+256Kctx
+Miễn phí
+Ministral 3 14B
+
+mistralai/ministral-14b
+
+256Kctx
+Miễn phí
+Ministral 3 8B
+
+mistralai/ministral-8b
+
+256Kctx
+Miễn phí
+Ministral 3 3B
+
+mistralai/ministral-3b
+
+128Kctx
+Miễn phí
+
+Sensenova
+2 models
+SenseNova 6.8 Flash-Lite
+
+sensenova/sensenova-6.8-flash-lite
+
++1
+262Kctx
+Miễn phí
+SenseNova 6.7 Flash-Lite
+
+sensenova/sensenova-6.7-flash-lite
+
++1
+262Kctx
+Miễn phí
